@@ -1,13 +1,15 @@
 <template>
-  <div>aaaa</div>
+    <div>
+        <homeHeader></homeHeader>
+    </div>
 </template>
 <script>
-export default {};
+import homeHeader from "./homeHeader.vue";
+export default {
+    components:{homeHeader}
+}
 </script>
 <style scoped>
-html,
-body {
-  height: 100%;
-}
+    
 </style>
 
