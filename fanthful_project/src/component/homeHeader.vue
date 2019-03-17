@@ -6,11 +6,11 @@
     <div class="logo fl">
       <img src="../assets/logo.png" alt>
     </div>
-    <div class="cart">
-      <img src="../assets/cart.png" alt>
-    </div>
-    <div class="search">
+    <div class="search fr">
       <img src="../assets/search.png" alt>
+    </div>
+    <div class="cart fr">
+      <img src="../assets/cart.png" alt>
     </div>
   </div>
 </template>
@@ -22,30 +22,31 @@ export default {};
   height: 30px;
   padding: 7px 10px;
   background-color: #000;
-  position: relative;
+  /* position: relative; */
+  display: flex;
   border-bottom: 1px solid #262626;
 }
 .nav_classify_icon {
-  height: 30px;
-  width: 30px;
+  height: 33px;
+  width: 33px;
 }
 .nav_classify_icon img {
   width: 100%;
 }
 .logo {
-  width: 130px;
-  position: absolute;
-  left: 50%;
-  margin-left: -65px;
-  top: 12px;
+  /* position: absolute; */
+  flex: 1;
+  text-align: center;
+  padding-top: 3px;
 }
 .logo img {
-  width: 100%;
+  vertical-align: middle;
+
+  width: 130px;
 }
 .search {
   height: 33px;
   width: 33px;
-  float: right;
 }
 .search img {
   width: 100%;
@@ -53,12 +54,10 @@ export default {};
 .cart {
   height: 33px;
   width: 33px;
-  float: right;
   margin-right: 2px;
-  position: relative;
 }
-.cart img{
-    width: 100%;
+.cart img {
+  width: 100%;
 }
 </style>
 

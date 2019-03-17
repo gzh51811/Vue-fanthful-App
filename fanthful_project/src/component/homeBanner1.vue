@@ -71,6 +71,7 @@ export default {
   width: 100%;
   /* height: 20px; */
   position: relative;
+  bottom: 2px;
 }
 .banner1 .pagination {
   position: absolute;

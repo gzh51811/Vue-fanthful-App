@@ -1,26 +1,60 @@
 <template>
-  <div>
+  <div class="home">
+    <div id="header">
       <homeHeader></homeHeader>
+    </div>
+    <div id="main">
       <homeBanner1></homeBanner1>
+      <homeBannerSep1></homeBannerSep1>
+      <homeBannerSep2></homeBannerSep2>
       <homeSeparator></homeSeparator>
-      <div>
-      <homeBanner2></homeBanner2>
-
-      </div>
-
+      <homeHotList></homeHotList>
+      <homeSeparator></homeSeparator>
+      <homeHotList></homeHotList>
+      <homeSeparator></homeSeparator>
+      <homeHotList></homeHotList>
+      <homeSeparator></homeSeparator>
+      <ProductList></ProductList>
+    </div>
+    <div id="footer">
+      <footers></footers>
+    </div>
   </div>
 </template>
 <script>
 import homeHeader from "../component/homeHeader.vue";
 import homeBanner1 from "../component/homeBanner1.vue";
+import homeBannerSep1 from "../component/homeBannerSep1.vue";
+import homeBannerSep2 from "../component/homeBannerSep2.vue";
 import homeSeparator from "../component/homeSeparator.vue";
-import homeBanner2 from "../component/homeBanner2.vue";
+import homeHotList from "../component/homeHotList.vue";
+import ProductList from "../component/Product_list.vue";
+import footers from "../component/homeFooter.vue";
 
 export default {
-  components: { homeHeader, homeBanner1, homeBanner2,homeSeparator }
+  components: {
+    homeHeader,
+    homeBanner1,
+    homeBannerSep1,
+    homeBannerSep2,
+    homeSeparator,
+    homeHotList,
+    ProductList,
+    footers
+  }
 };
 </script>
 <style scoped>
+.home {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+#main {
+  flex: 1;
+  overflow-x: hidden;
+}
 
 </style>
 
