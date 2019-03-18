@@ -18,7 +18,13 @@ export default {
 .proDetailFooter{
     width: 100%;
     display: flex;
+    height: 50px;
     border-top: 1px solid #575757;
+}
+.gotoCart{
+    flex: 1;
+    text-align: center;
+    position: relative;
 }
 .gotoCart i{
     color:#EDD49D;
@@ -26,15 +32,25 @@ export default {
 }
 .gotoCart span{
     display: inline-block;
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
     border-radius: 50%;
     border: 1px solid #000;
     color:#9A623A;
     text-align: center;
-    line-height: 30px;
+    line-height: 25px;
     background: #EBD49D;
+    position: absolute;
+    left: 50%;
+    bottom: 42%;
 }
+.addCart,.buyNow{
+    font-size: 20px;
+     flex: 1;
+     text-align: center;
+     line-height: 50px;
+}
+
 .addCart{
     background: #EED391;
     color:#9B6239;
