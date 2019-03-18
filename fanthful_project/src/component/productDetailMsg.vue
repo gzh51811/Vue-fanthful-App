@@ -243,7 +243,6 @@ export default {
 .relatedBtn {
   width: 30px;
   height: 30px;
-  display: inline-block;
   color: #fff;
   float: right;
   line-height: 50px;

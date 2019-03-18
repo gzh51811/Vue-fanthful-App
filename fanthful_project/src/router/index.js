@@ -15,7 +15,7 @@ let router = new VueRouter({
             component:Home
         },
         {
-            path:'/goodslist',
+            path:'/godsList',
             component:Goodslist
         },
         {

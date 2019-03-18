@@ -2,7 +2,7 @@
   <div class="productDetail">
     <div id="main">
       <!-- <div class="detailBanner"> -->
-        <productDetailBanner></productDetailBanner>
+      <productDetailBanner></productDetailBanner>
       <!-- </div> -->
       <productDetailMsg></productDetailMsg>
     </div>
@@ -22,8 +22,8 @@ export default {
 </script>
 <style scoped>
 .productDetail {
-    height: 100%;
-
+  height: 100%;
+  background: #000;
   display: flex;
   flex-direction: column;
 }

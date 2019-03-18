@@ -49,8 +49,11 @@ export default {
   height: 100%;
   display: flex;
   flex-direction: column;
+  background: #000;
 }
-
+#header{
+  height: 45px;
+}
 #main {
   flex: 1;
   overflow-x: hidden;

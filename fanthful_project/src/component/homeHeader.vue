@@ -19,10 +19,10 @@ export default {};
 </script>
 <style scoped>
 .nav {
-  height: 30px;
-  padding: 7px 10px;
+  height: 45px;
+  padding: 0px 10px;
+  line-height: 45px;
   background-color: #000;
-  /* position: relative; */
   display: flex;
   border-bottom: 1px solid #262626;
 }
@@ -40,10 +40,11 @@ export default {};
   padding-top: 3px;
 }
 .logo img {
-  vertical-align: middle;
+  /* vertical-align: middle; */
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
+  top:14px;
   width: 130px;
 }
 .search {

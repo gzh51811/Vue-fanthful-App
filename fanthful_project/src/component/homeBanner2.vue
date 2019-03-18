@@ -3,7 +3,9 @@
     <div class="swiper-container" id="swiper2">
       <div class="swiper-wrapper">
         <div class="swiper-slide" v-for="(img,idx) in imgsa" :key="idx">
-          <img :src="img" alt>
+          <div class="bannerImg">
+            <img :src="img" alt>
+          </div>
           <p class="ch">超级马里奥（马力欧）蘑菇小夜灯</p>
           <p class="en">Super Mario Mushroom Light</p>
         </div>
@@ -59,18 +61,23 @@ export default {
 #swiper2 {
   padding: 0 11px 20px;
 }
-#swiper2  .swiper-slide {
+#swiper2 .swiper-slide {
   width: 194px;
   height: 230px;
   border: 1px solid #717171;
   padding-bottom: 5px;
   margin-bottom: 5px;
 }
-#swiper2  .swiper-slide img {
-  width: 142px;
-  height: 142px;
-  margin: 8px;
-  margin-bottom: 15px;
+.bannerImg {
+  width: 8.93rem;
+  height: 8.93rem;
+  margin: 20px auto;
+    margin-bottom: 0;
+}
+#swiper2 .swiper-slide img {
+  width: 8.93rem;
+  height: 8.93rem;
+
 }
 .swiper-slide p {
   white-space: nowrap;

@@ -32,17 +32,17 @@ export default {
 }
 .gotoCart span{
     display: inline-block;
-    width: 25px;
-    height: 25px;
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
     border: 1px solid #000;
     color:#9A623A;
     text-align: center;
-    line-height: 25px;
+    line-height: 20px;
     background: #EBD49D;
     position: absolute;
     left: 50%;
-    bottom: 42%;
+    bottom: 50%;
 }
 .addCart,.buyNow{
     font-size: 20px;
