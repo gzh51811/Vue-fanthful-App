@@ -19,9 +19,8 @@ export default {
             state:false
         }
     },
-    components:{
-        godsListSortList
-    }
+    components:{godsListSortList}
+    
 };
 </script>
 <style scoped>

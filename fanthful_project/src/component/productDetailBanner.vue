@@ -39,9 +39,7 @@ export default {
 };
 </script>
 <style >
-.product_banner{
-    height: 375px;
-}
+
 .product_banner .swiper-slide{
     line-height: 375px;
 

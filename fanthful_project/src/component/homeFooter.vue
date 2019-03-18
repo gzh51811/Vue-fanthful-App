@@ -25,7 +25,7 @@ export default {
 <style scoped>
 .footer {
   width: 100%;
-  height: 45px;
+  height: 50px;
 }
 .footer span {
   display: inline-block;
