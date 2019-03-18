@@ -1,59 +1,63 @@
 <template>
   <div class="detailMsg">
-    <div class="intro">
-      <p class="ch_name">育碧 汤姆克兰西全境封锁2 T恤 - LINCOLN</p>
-      <p class="en_name">TCTD2 T-shirt - LINCOLN</p>
-      <p class="price" style="height: 20px;">
-        <span class="now_price">￥88.0</span>
-        <span class="old_price">￥99.0</span>
-        <span class="pre_sale">预售</span>
-      </p>
-      <p class="pre_sale_time">预售截止时间：2019-04-30</p>
-    </div>
-    <div class="details">
-      <p class="title">商品详情</p>
-      <p class="pro_content">
-        汤姆克兰西全境封锁2 LINCOLN T恤
-        育碧官方正版授权，FANTHFUL设计开发
-        材质：棉
-        尺码：S / M / L / XL / XXL
-        款式：LINCOLN
-      </p>
-      <div class="img_list">
-        <img
-          :src="detailImg"
-          v-for="(detailImg,idx) in detailImgs"
-          :key="idx"
-          style="width: 100%; margin: 10px 0px;"
-        >
+    <div class="main">
+      <div class="intro">
+        <p class="ch_name">育碧 汤姆克兰西全境封锁2 T恤 - LINCOLN</p>
+        <p class="en_name">TCTD2 T-shirt - LINCOLN</p>
+        <p class="price" style="height: 20px;">
+          <span class="now_price">￥88.0</span>
+          <span class="old_price">￥99.0</span>
+          <span class="pre_sale">预售</span>
+        </p>
+        <p class="pre_sale_time">预售截止时间：2019-04-30</p>
       </div>
-      <p class="title">包装和快递说明</p>
-      <p class="service">现货发货时间：2个工作日；预售按预售的发货时间</p>
-    </div>
-    <div class="related">
-      <div class="related_product_list">
-        <p class="tite">相关商品</p>
-        <ul>
-          <li class="border_bottom">
+      <div class="details">
+        <p class="title">商品详情</p>
+        <p class="pro_content">
+          汤姆克兰西全境封锁2 LINCOLN T恤
+          育碧官方正版授权，FANTHFUL设计开发
+          材质：棉
+          尺码：S / M / L / XL / XXL
+          款式：LINCOLN
+        </p>
+        <div class="img_list">
+          <img
+            :src="detailImg"
+            v-for="(detailImg,idx) in detailImgs"
+            :key="idx"
+            style="width: 100%; margin: 10px 0px;"
+          >
+        </div>
+        <p class="title">包装和快递说明</p>
+        <p class="service">现货发货时间：2个工作日；预售按预售的发货时间</p>
+      </div>
+      <div class="related">
+        <div class="related_product_list">
+          <p class="tite">相关商品</p>
+          <ul>
+            <li class="border_bottom">
+              <a class>
+                <div
+                  class="my_img"
+                  style="background-image: url(&quot;http://datafanthfuloss.oss-cn-shanghai.aliyuncs.com/cpsupload/pic/20190314224305787672.jpg&quot;);"
+                ></div>
+                <div class="text">
+                  <p class="ch_name">育碧 汤姆克兰西全境封锁2 T恤 - UNITE</p>
+                  <p class="en_name">TCTD2 T-shirt - UNITE</p>
+                </div>
+              </a>
+            </li>
+          </ul>
+          <div class="check_all">
             <a class>
-              <div
-                class="my_img"
-                style="background-image: url(&quot;http://datafanthfuloss.oss-cn-shanghai.aliyuncs.com/cpsupload/pic/20190314224305787672.jpg&quot;);"
-              ></div>
-              <div class="text">
-                <p class="ch_name">育碧 汤姆克兰西全境封锁2 T恤 - UNITE</p>
-                <p class="en_name">TCTD2 T-shirt - UNITE</p>
-              </div>
+              <p>查看所有相关商品(4)</p>
+              <i class="iconfont icon-icon_arrow_right relatedBtn"></i>
             </a>
-          </li>
-        </ul>
-        <div class="check_all">
-          <a class>
-            <p>查看所有相关商品(4)</p>
-            <i class="iconfont icon-icon_arrow_right relatedBtn"></i>
-          </a>
+          </div>
         </div>
       </div>
+    </div>
+    <div class="footer">
     </div>
   </div>
 </template>
@@ -244,7 +248,7 @@ export default {
   display: inline-block;
   color: #fff;
   float: right;
-    line-height: 50px;
-    margin-right: 10px;
+  line-height: 50px;
+  margin-right: 10px;
 }
 </style>
