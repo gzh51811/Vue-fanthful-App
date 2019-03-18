@@ -25,6 +25,7 @@ export default {
     flex: 1;
     text-align: center;
     position: relative;
+    background: #000;
 }
 .gotoCart i{
     color:#EDD49D;
