@@ -8,7 +8,7 @@
     <div id="sortList" v-if="state">
         <godsListSortList></godsListSortList>
     </div>
-  </div>
+  </div> 
 </template>
 <script>
 import godsListSortList from "./godsListSortList.vue";

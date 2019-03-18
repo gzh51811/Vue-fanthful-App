@@ -35,7 +35,12 @@ export default {};
   flex: 1;
   text-align: center;
   padding-top: 4px;
-  color:#fff;
+  color: #fff;
+}
+.name span {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 .search,
 .cart {

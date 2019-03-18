@@ -41,7 +41,9 @@ export default {};
 }
 .logo img {
   vertical-align: middle;
-
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   width: 130px;
 }
 .search {

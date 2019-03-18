@@ -1,5 +1,5 @@
 <template>
-  <div class="banner1" style=" height: 129px;padding: 10px 11px 20px;background: #000;">
+  <div class="banner banner1">
     <div class="swiper-container" id="swiper1">
       <div class="swiper-wrapper">
         <div class="swiper-slide" v-for="(img,idx) in imgs" :key="idx">
@@ -45,12 +45,15 @@ export default {
 };
 </script>
 <style >
-
-.banner1 img {
+.banner1 {
+  height: 129px;
+  padding: 10px 11px 27px;
+}
+.banner img {
   width: 100%;
 }
 /* #swiper1  */
-.banner1 .swiper-pagination-bullet-active {
+.banner .swiper-pagination-bullet-active {
   width: 6px;
   height: 6px;
   border-radius: 0;
@@ -58,7 +61,7 @@ export default {
 }
 
 /* #swiper1  */
-.banner1 .swiper-pagination-bullet {
+.banner .swiper-pagination-bullet {
   display: inline-block;
   width: 5px;
   height: 5px;
@@ -67,13 +70,13 @@ export default {
   border-radius: 0;
   margin-left: 6px;
 }
-.banner1 .pages {
+.banner .pages {
   width: 100%;
   /* height: 20px; */
   position: relative;
   bottom: 2px;
 }
-.banner1 .pagination {
+.banner .pagination {
   position: absolute;
   bottom: -25px;
   right: 50%;

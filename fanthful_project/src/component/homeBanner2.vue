@@ -1,5 +1,5 @@
 <template>
-  <div class="banner1 banner2">
+  <div class="banner banner2">
     <div class="swiper-container" id="swiper2">
       <div class="swiper-wrapper">
         <div class="swiper-slide" v-for="(img,idx) in imgsa" :key="idx">

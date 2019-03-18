@@ -2,7 +2,7 @@ import Vue from "vue";
 import VueRouter from 'vue-router';
 import Home from '../pages/home.vue';
 import Goodslist from '../pages/godsList.vue';
-
+import productDetail from '../pages/productDetail.vue';
 Vue.use(VueRouter);
 let router = new VueRouter({
     routes: [
@@ -17,6 +17,10 @@ let router = new VueRouter({
         {
             path:'/goodslist',
             component:Goodslist
+        },
+        {
+            path:'/productDetail',
+            component:productDetail
         }
     ]
 })
