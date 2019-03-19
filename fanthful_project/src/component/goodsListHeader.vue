@@ -4,7 +4,7 @@
       <img src="../assets/break.png">
     </div>
     <div class="name fl">
-      <span>Zelda</span>
+      <span>{{goodsListName.name}}</span>
     </div>
     <div class="search fr">
       <img src="../assets/search.png" alt>
@@ -15,7 +15,14 @@
   </div>
 </template>
 <script>
-export default {};
+export default {
+  computed:{
+    goodsListName(){
+      return this.$store.state.goodsListName
+    }
+  }
+  
+};
 </script>
 <style scoped>
 .goodsListHeader {

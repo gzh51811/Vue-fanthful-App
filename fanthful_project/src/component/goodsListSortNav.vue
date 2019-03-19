@@ -1,11 +1,11 @@
 <template>
   <div class="sortNav">
-    <div class="qty">商品数量:63件</div>
-    <div class="sortBtn">
+    <div class="qty">商品数量:{{goodsqty}}件</div>
+    <div :class="{sortBtn:1,open:state}" @click="sortListBtn()">
       <span>默认</span>
-      <i class="up"></i>
+      <i :class="{up:!state,down:state}"></i>
     </div>
-    <div id="sortList" v-if="state">
+    <div id="sortList" v-if="state" >
         <godsListSortList></godsListSortList>
     </div>
   </div> 
@@ -19,7 +19,17 @@ export default {
             state:false
         }
     },
-    components:{godsListSortList}
+    computed:{
+      goodsqty(){
+        return this.$store.state.goodsQty
+      }
+    },
+    components:{godsListSortList},
+    methods:{
+      sortListBtn(){
+        this.state=!this.state;
+      }
+    }
     
 };
 </script>
@@ -43,6 +53,9 @@ export default {
   background: #fff;
   color: #6f6f6f;
   /* margin-right: 10px; */
+}
+.open{
+  background: red;
 }
 .sortBtn i {
   display: inline-block;

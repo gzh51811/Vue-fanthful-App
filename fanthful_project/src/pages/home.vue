@@ -14,7 +14,7 @@
       <homeSeparator :imgs="SeparatorImg.tv"></homeSeparator>
       <homeHotList :hotGoodsLists="hotMsg.hottvlist"></homeHotList>
       <homeSeparator :imgs="SeparatorImg.bestsellers"></homeSeparator>
-      <ProductList></ProductList>
+      <ProductList :goodsMsgs="goodsListMsg"></ProductList>
     </div>
     <div id="footer">
       <footers></footers>
@@ -36,6 +36,7 @@ export default {
     return {
       bannerMsg: [],
       hotMsg: [],
+      goodsListMsg:[],
       SeparatorImg: {
         game: require("../assets/game.png"),
         movie: require("../assets/movie.png"),
@@ -48,11 +49,19 @@ export default {
     async getBannerMsg() {
       let res = await this.$axios.get("http://localhost:10086/banner");
       this.bannerMsg = res.data.data;
+      // console.log(res)
     },
     async getHotMsg() {
       let res = await this.$axios.get("http://localhost:10086/hotmsg");
       this.hotMsg = res.data.data;
-      console.log(this.hotMsg);
+      // console.log(res)
+
+    },
+     async getGoodsListMsg() {
+      let res = await this.$axios.get("http://localhost:10086/goodlist");
+      this.goodsListMsg = res.data.data;
+      // console.log(res)
+
     }
   },
   components: {
@@ -68,6 +77,7 @@ export default {
   created() {
     this.getBannerMsg();
     this.getHotMsg();
+    this.getGoodsListMsg();
   }
 };
 </script>

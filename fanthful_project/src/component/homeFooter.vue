@@ -11,6 +11,7 @@ import "../assets/iconfont/font_1092277_zjgdon691oi/iconfont.css";
 export default {
   data() {
     return {
+      current:0,
       contents: [
         { icon: "iconfont icon-shangpinshengou", name: "商品" },
         { icon: "iconfont icon-icon04", name: "分类" },

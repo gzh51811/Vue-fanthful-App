@@ -1,22 +1,20 @@
 <template>
   <div class="product_list clearfix">
-    <div v-for="(proList,idx) in proLists" :key="idx">
+    <div v-for="proList in proLists" :key="proList._id">
       <div class="product_item">
         <a>
           <div class="my_image_box">
             <img :src="proList.imgLink" width="100%">
-            <!-- <div
-              class="pro_img"
-              style="background-image: url(&quot;http://datafanthfuloss.oss-cn-shanghai.aliyuncs.com/cpsupload/pic/20190314224305739459.jpg&quot;);"
-            ></div>-->
-            <!---->
           </div>
           <p class="product_name">{{proList.proName}}</p>
           <p class="product_name_en">{{proList.englishName}}</p>
           <div class="price">
-            <span class="product_price">￥{{proList.proPrice}}</span>
-            <span class="discount_rate">{{discountRate(proList.proPrePrice,proList.proPrice)}}</span>
-            <span class="pre_sale">预售</span>
+            <span class="product_price">￥{{proList.proPrice}}.0</span>
+            <span
+              class="discount_rate"
+              v-if="proList.isDiscount"
+            >{{discountRate(proList.proPrePrice,proList.proPrice)}}</span>
+            <span class="pre_sale" v-if="proList.isPreSale===1">预售</span>
           </div>
         </a>
       </div>
@@ -25,56 +23,38 @@
 </template>
 <script>
 export default {
+  props: ["goodsMsgs"],
+  watch: {
+    goodsMsgs: function() {
+      this.proLists = this.goodsMsgs;
+    }
+  },
   data() {
     return {
-      proLists: [
-        {
-          deleteFlag: 2,
-          deliverTime: 1556553600000,
-          discountRate: 88,
-          englishName: "TCTD2 Mobile Phone Case",
-          imgLink:
-            "http://datafanthfuloss.oss-cn-shanghai.aliyuncs.com/cpsupload/pic/20190314224004965958.jpg",
-          indexIsShow: 2,
-          isDiscount: "1",
-          isExtension: 2,
-          isPreSale: "1",
-          isPutSale: 1,
-          isSellOut: 2,
-          limitBuyCount: null,
-          proName: "育碧 汤姆克兰西全境封锁2 手机壳",
-          proPrePrice: "59.0",
-          proPrice: "52.0",
-          productId: 6095
-        },
-        {
-          deleteFlag: 2,
-          deliverTime: null,
-          discountRate: "",
-          englishName: "Overwatch - Pharah Pixel T-shirt",
-          imgLink:
-            "http://datafanthfuloss.oss-cn-shanghai.aliyuncs.com/cpsupload/pic/20190217235005674395.jpg",
-          indexIsShow: 2,
-          isDiscount: "0",
-          isExtension: 2,
-          isPreSale: "2",
-          isPutSale: 1,
-          isSellOut: 2,
-          limitBuyCount: null,
-          proName: "暴雪守望先锋角色像素款T恤 - 法老之鹰",
-          proPrePrice: "148.0",
-          proPrice: "148.0",
-          productId: 6094,
-          saleTime: null
-        }
-      ]
+      proLists: []
     };
+  },
+  computed: {
+    isRedirects() {
+      return this.$store.state.goodsListName.gotoGoodslist;
+    }
   },
   methods: {
     discountRate(proPrePrice, proPrice) {
       var res = (proPrice / proPrePrice - 1) * 100;
       return res.toFixed(0) + "%";
+    },
+    async getGoodsList() {
+      if (this.$route.query.gotoGoodslist) {
+        let res = await this.$axios.get("http://localhost:10086/goodlist");
+        this.proLists = res.data.data.slice(0, 5);
+        this.$store.commit("addGoodsQty", this.proLists.length);
+        
+      }
     }
+  },
+  created(){
+    this.getGoodsList()
   }
 };
 </script>
@@ -89,7 +69,7 @@ export default {
 .product_list > div:nth-child(odd) .product_item {
   padding-right: 6px;
 }
-.product_list > div:nth-child(even) .product_item {
+.product_list > div:nth-child(2n) .product_item {
   padding-left: 6px;
 }
 .product_list .product_item {
@@ -100,6 +80,12 @@ export default {
   position: relative;
   border: 1px solid #333;
   margin-bottom: 10px;
+  width: 167px;
+  height: 169px;
+}
+.my_image_box img {
+  display: block;
+  height: 100%;
 }
 p {
   white-space: nowrap;

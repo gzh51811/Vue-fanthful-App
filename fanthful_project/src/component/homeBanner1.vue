@@ -2,7 +2,12 @@
   <div class="banner banner1">
     <div class="swiper-container" id="swiper1">
       <div class="swiper-wrapper">
-        <div class="swiper-slide" v-for="(banner,idx) in banner1" :key="idx">
+        <div
+          class="swiper-slide"
+          v-for="(banner,idx) in banner1"
+          :key="idx"
+          @click="gotoGodsList(banner.twoName)"
+        >
           <img :src="banner.bannerImg">
         </div>
       </div>
@@ -34,7 +39,13 @@ export default {
       });
     }
   },
-  props: ["banner1"]
+  props: ["banner1"],
+  methods: {
+    async gotoGodsList(name) {
+      this.$store.commit("changeGoodsListName", {name,gotoGoodslist:true});
+      this.$router.push("/godsList?gotoGoodslist=true");
+    }
+  }
 };
 </script>
 <style >

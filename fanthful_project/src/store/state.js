@@ -1,3 +1,5 @@
 export default {
-    cartlist: []
+    goodsListName:"",
+    goodsListMSg:[],
+    goodsQty:''
 }
