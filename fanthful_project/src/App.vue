@@ -1,26 +1,26 @@
 <template>
-  <!-- <router-view></router-view> -->
- <div>
-   aaa
- </div>
+  <router-view></router-view>
+ 
 </template>
 
 <script>
-// import Vue from "vue";
-// import router from "./router";
+import Vue from "vue";
+import router from "./router";
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
+Vue.use(ElementUI);
 
 export default {
-  // router
+  router
 };
 </script>
 
 <style>
 html,body{
   height:100%;
-}
-div{
-  font-style:1.875rem;
-height:1.875rem;
-border: .125rem solid #262626;
+  width:100%;
+  background: #000;
+  
+
 }
 </style>
