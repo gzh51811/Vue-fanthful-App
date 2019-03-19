@@ -4,16 +4,16 @@
       <homeHeader></homeHeader>
     </div>
     <div id="main">
-      <homeBanner1 :banner1="bannerMsg.banner1" ></homeBanner1>
-      <homeBannerSep1 :banner2="bannerMsg.banner2" ></homeBannerSep1>
+      <homeBanner1 :banner1="bannerMsg.banner1"></homeBanner1>
+      <homeBannerSep1 :banner2="bannerMsg.banner2"></homeBannerSep1>
       <homeBannerSep2 :banner3="bannerMsg.banner3"></homeBannerSep2>
-      <homeSeparator></homeSeparator>
-      <homeHotList></homeHotList>
-      <homeSeparator></homeSeparator>
-      <homeHotList></homeHotList>
-      <homeSeparator></homeSeparator>
-      <homeHotList></homeHotList>
-      <homeSeparator></homeSeparator>
+      <homeSeparator :imgs="SeparatorImg.game"></homeSeparator>
+      <homeHotList :hotGoodsLists="hotMsg.hotgamelist"></homeHotList>
+      <homeSeparator :imgs="SeparatorImg.movie"></homeSeparator>
+      <homeHotList :hotGoodsLists="hotMsg.hotmovielist"></homeHotList>
+      <homeSeparator :imgs="SeparatorImg.tv"></homeSeparator>
+      <homeHotList :hotGoodsLists="hotMsg.hottvlist"></homeHotList>
+      <homeSeparator :imgs="SeparatorImg.bestsellers"></homeSeparator>
       <ProductList></ProductList>
     </div>
     <div id="footer">
@@ -34,15 +34,25 @@ import footers from "../component/homeFooter.vue";
 export default {
   data() {
     return {
-      bannerMsg: []
+      bannerMsg: [],
+      hotMsg: [],
+      SeparatorImg: {
+        game: require("../assets/game.png"),
+        movie: require("../assets/movie.png"),
+        tv: require("../assets/tv.png"),
+        bestsellers: require("../assets/bestsellers.png")
+      }
     };
   },
   methods: {
     async getBannerMsg() {
       let res = await this.$axios.get("http://localhost:10086/banner");
       this.bannerMsg = res.data.data;
-      console.log(this.bannerMsg);
-
+    },
+    async getHotMsg() {
+      let res = await this.$axios.get("http://localhost:10086/hotmsg");
+      this.hotMsg = res.data.data;
+      console.log(this.hotMsg);
     }
   },
   components: {
@@ -57,6 +67,7 @@ export default {
   },
   created() {
     this.getBannerMsg();
+    this.getHotMsg();
   }
 };
 </script>
