@@ -2,8 +2,8 @@
   <div class="banner banner1">
     <div class="swiper-container" id="swiper1">
       <div class="swiper-wrapper">
-        <div class="swiper-slide" v-for="(img,idx) in imgs" :key="idx">
-          <img :src="img" alt>
+        <div class="swiper-slide" v-for="(banner,idx) in banner1" :key="idx">
+          <img :src="banner.bannerImg">
         </div>
       </div>
       <!-- Add Pagination -->
@@ -16,32 +16,25 @@
 <script>
 import Swiper from "swiper";
 export default {
-  data() {
-    return {
-      imgs: [
-        require("../assets/banner1-1.jpg"),
-        require("../assets/banner1-1.jpg"),
-        require("../assets/banner1-1.jpg"),
-        require("../assets/banner1-1.jpg"),
-        require("../assets/banner1-1.jpg"),
-        require("../assets/banner1-1.jpg")
-      ]
-    };
+  watch: {
+    banner1: function() {
+      this.$nextTick(function() {
+        new Swiper("#swiper1", {
+          loop: true,
+          slidesPerView: 1,
+          centeredSlides: true,
+          autoplay: {
+            delay: 2500,
+            disableOnInteraction: false
+          },
+          pagination: {
+            el: ".swiper-pagination"
+          }
+        });
+      });
+    }
   },
-  mounted() {
-    new Swiper("#swiper1", {
-      loop: true,
-      slidesPerView: 1,
-      centeredSlides: true,
-      autoplay: {
-        delay: 2500,
-        disableOnInteraction: false
-      },
-      pagination: {
-        el: ".swiper-pagination"
-      }
-    });
-  }
+  props: ["banner1"]
 };
 </script>
 <style >

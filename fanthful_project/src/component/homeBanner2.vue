@@ -2,12 +2,12 @@
   <div class="banner banner2">
     <div class="swiper-container" id="swiper2">
       <div class="swiper-wrapper">
-        <div class="swiper-slide" v-for="(img,idx) in imgsa" :key="idx">
+        <div class="swiper-slide" v-for="(banner,idx) in banner2" :key="idx">
           <div class="bannerImg">
-            <img :src="img" alt>
+            <img :src="banner.proImgUrl" alt>
           </div>
-          <p class="ch">超级马里奥（马力欧）蘑菇小夜灯</p>
-          <p class="en">Super Mario Mushroom Light</p>
+          <p class="ch">{{banner.proName}}</p>
+          <p class="en">{{banner.proEnglishName}}</p>
         </div>
       </div>
       <!-- Add Pagination -->
@@ -20,44 +20,32 @@
 <script>
 import Swiper from "swiper";
 export default {
-  data() {
-    return {
-      imgsa: [
-        require("../assets/banner1-1.jpg"),
-        require("../assets/banner1-1.jpg"),
-        require("../assets/banner1-1.jpg"),
-        require("../assets/banner1-1.jpg"),
-        require("../assets/banner1-1.jpg"),
-        require("../assets/banner1-1.jpg")
-      ]
-    };
-  },
-  mounted() {
-    new Swiper("#swiper2", {
-      loop: true,
-      effect: "coverflow",
-      slidesPerView: 2,
-      spaceBetween: 40,
-      centeredSlides: true,
-      coverflowEffect: {
-        rotate: 0,
-        slideShadows: false,
-        stretch: 0,
-        depth: 160
-      },
-      pagination: {
-        el: ".swiper-pagination-pic"
-      }
-    });
+  props: ["banner2"],
+  watch: {
+    banner2() {
+      this.$nextTick(function() {
+        new Swiper("#swiper2", {
+          loop: true,
+          effect: "coverflow",
+          slidesPerView: 2,
+          spaceBetween: 40,
+          centeredSlides: true,
+          coverflowEffect: {
+            rotate: 0,
+            slideShadows: false,
+            stretch: 0,
+            depth: 160
+          },
+          pagination: {
+            el: ".swiper-pagination-pic"
+          }
+        });
+      });
+    }
   }
 };
 </script>
 <style scoped>
-/* .swiper-slide img{
-    width: 100px;
-    height: 100px;
-} */
-
 #swiper2 {
   padding: 0 11px 20px;
 }
@@ -72,12 +60,11 @@ export default {
   width: 8.93rem;
   height: 8.93rem;
   margin: 20px auto;
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 #swiper2 .swiper-slide img {
   width: 8.93rem;
   height: 8.93rem;
-
 }
 .swiper-slide p {
   white-space: nowrap;

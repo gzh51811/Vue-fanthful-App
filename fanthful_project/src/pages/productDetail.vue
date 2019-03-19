@@ -9,7 +9,7 @@
     <div id="footer">
       <productDetailFooter></productDetailFooter>
     </div>
-    <!-- <productDetailBuyMask></productDetailBuyMask> -->
+    <productDetailBuyMask></productDetailBuyMask>
   </div>
 </template>
 <script>

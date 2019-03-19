@@ -2,13 +2,15 @@
   <div class="separator">
     <div class="new_arrival">
       <span>
-        <img src="../assets/fengge.png">
+        <img :src="imgs">
       </span>
     </div>
   </div>
 </template>
 <script>
-export default {};
+export default {
+  props:['imgs']
+};
 </script>
 <style scoped>
 .separator {

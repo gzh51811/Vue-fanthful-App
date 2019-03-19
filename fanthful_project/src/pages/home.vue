@@ -4,9 +4,9 @@
       <homeHeader></homeHeader>
     </div>
     <div id="main">
-      <homeBanner1></homeBanner1>
-      <homeBannerSep1></homeBannerSep1>
-      <homeBannerSep2></homeBannerSep2>
+      <homeBanner1 :banner1="bannerMsg.banner1" ></homeBanner1>
+      <homeBannerSep1 :banner2="bannerMsg.banner2" ></homeBannerSep1>
+      <homeBannerSep2 :banner3="bannerMsg.banner3"></homeBannerSep2>
       <homeSeparator></homeSeparator>
       <homeHotList></homeHotList>
       <homeSeparator></homeSeparator>
@@ -32,6 +32,19 @@ import ProductList from "../component/Product_list.vue";
 import footers from "../component/homeFooter.vue";
 
 export default {
+  data() {
+    return {
+      bannerMsg: []
+    };
+  },
+  methods: {
+    async getBannerMsg() {
+      let res = await this.$axios.get("http://localhost:10086/banner");
+      this.bannerMsg = res.data.data;
+      console.log(this.bannerMsg);
+
+    }
+  },
   components: {
     homeHeader,
     homeBanner1,
@@ -41,6 +54,9 @@ export default {
     homeHotList,
     ProductList,
     footers
+  },
+  created() {
+    this.getBannerMsg();
   }
 };
 </script>
@@ -51,13 +67,12 @@ export default {
   flex-direction: column;
   background: #000;
 }
-#header{
+#header {
   height: 45px;
 }
 #main {
   flex: 1;
   overflow-x: hidden;
 }
-
 </style>
 

@@ -2,10 +2,10 @@
   <div class="banner banner3">
     <div class="swiper-container" id="swiper3">
       <div class="swiper-wrapper">
-        <div class="swiper-slide" v-for="(img,idx) in imgsa" :key="idx">
-          <img :src="img" alt>
-          <p class="ch">超级马里奥（马力欧）蘑菇小夜灯</p>
-          <p class="en">Super Mario Mushroom Light</p>
+        <div class="swiper-slide" v-for="banner in banner3" :key="banner.proEnglishName">
+          <img :src="banner.proImgUrl" alt>
+          <p class="ch">{{banner.proName}}</p>
+          <p class="en">{{banner.proEnglishName}}</p>
         </div>
       </div>
       <!-- Add Pagination -->
@@ -18,20 +18,11 @@
 <script>
 import Swiper from "swiper";
 export default {
-  data() {
-    return {
-      imgsa: [
-        require("../assets/banner1-1.jpg"),
-        require("../assets/banner1-1.jpg"),
-        require("../assets/banner1-1.jpg"),
-        require("../assets/banner1-1.jpg"),
-        require("../assets/banner1-1.jpg"),
-        require("../assets/banner1-1.jpg")
-      ]
-    };
-  },
-  mounted() {
-    new Swiper("#swiper3", {
+  props:['banner3'],
+  watch: {
+    banner3: function() {
+      this.$nextTick(function() {
+       new Swiper("#swiper3", {
       loop: true,
       effect: "coverflow",
       slidesPerView: 2,
@@ -47,6 +38,9 @@ export default {
         el: ".swiper-pagination-pic"
       }
     });
+  
+      });
+    }
   }
 };
 </script>
