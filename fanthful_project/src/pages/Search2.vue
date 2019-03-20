@@ -1,7 +1,7 @@
 <template>
     <div>
         <div  class="nav" >
-        <div class="close"><i class="el-icon-close" @click="close"></i> 
+        <div class="close"><i class="el-icon-arrow-left" @click="back"></i> 
         </div>
         <div class="input"> 
         <form action=""> 
@@ -9,7 +9,7 @@
         </form>
         </div>
         <div class="search">
-        <i class="el-icon-search"  @click="search"></i>
+        <i class=""  @click="search"></i>
         </div>
       </div>
     
@@ -21,15 +21,11 @@ export default {
 		return {};
 	},
 	methods: {
-		search() {
-            //点击搜索图标,请求数据并跳转
-            this.$router.push('/search2')
-			console.log(this.$refs.input.value);
+		back() {
+            //点击返回图标，返回搜索页
+		this.$router.push('/search')
 		},
-        close(){
-            //点击关闭图标，返回首页
-            this.$router.push('/home')
-        }
+        
 	},
 };
 </script>

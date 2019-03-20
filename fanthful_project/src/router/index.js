@@ -4,6 +4,8 @@ import Home from '../pages/home.vue';
 import Login from "../pages/Login.vue";
 import Register from "../pages/Register.vue";
 import Search from "../pages/Search.vue";
+import Search2 from "../pages/Search2.vue";
+
 
 Vue.use(VueRouter);
 let router = new VueRouter({
@@ -27,6 +29,10 @@ let router = new VueRouter({
          {
              path:'/search',
              component:Search
+         },
+         {
+             path:'/search2',
+             component:Search2
          }
     ]
 })
