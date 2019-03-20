@@ -1,7 +1,8 @@
 <!--登录-->
 <template >
     <div id="container">
-      <div class="reg" >
+     <div class="container">
+        <div class="reg" >
         <span style="float:right" @click="run">注册 </span>
       </div>
        <el-form :model="ruleForm"  status-icon :rules="rules" ref="ruleForm"  class="demo-ruleForm">
@@ -15,6 +16,7 @@
         <span style="float: right ;color:white;font-size:14px">忘记密码</span>
         <el-button type="danger" class="btn" @click="login">登录</el-button>  
        </el-form>
+     </div>
     </div>
 </template>
 <script>
@@ -67,8 +69,15 @@ export default {
   
 	}
 </script>
+<style scoped>
+#container{
+  height: 100%;
+  width: 100%;
+  background: black
+}
+</style>
 <style>
- #container{
+ .container{
     width: 80%;
     margin: auto;
   }
