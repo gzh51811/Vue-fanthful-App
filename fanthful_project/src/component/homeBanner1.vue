@@ -42,7 +42,7 @@ export default {
   props: ["banner1"],
   methods: {
     async gotoGodsList(name) {
-      this.$store.commit("changeGoodsListName", {name,gotoGoodslist:true});
+      this.$store.commit("changeGoodsListName", {name});
       this.$router.push("/godsList?gotoGoodslist=true");
     }
   }

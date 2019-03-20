@@ -1,5 +1,5 @@
 export default {
     goodsListName:"",
     goodsListMSg:[],
-    goodsQty:''
+    goodsQty:0
 }

@@ -2,7 +2,7 @@
   <div class="product_banner">
     <div class="swiper-container" id="swiper4">
       <div class="swiper-wrapper">
-        <div class="swiper-slide" v-for="(bannerImg,idx) in bannerImgs" :key="idx">
+        <div class="swiper-slide"  :key="idx">
           <img :src="bannerImg" alt>
         </div>
       </div>
@@ -14,18 +14,7 @@
 <script>
 import Swiper from "swiper";
 export default {
-  data() {
-    return {
-      bannerImgs: [
-        "http://datafanthfuloss.oss-cn-shanghai.aliyuncs.com/cpsupload/pic/20190130120703536433.jpg",
-        "http://datafanthfuloss.oss-cn-shanghai.aliyuncs.com/cpsupload/pic/20190215161803635218.jpg",
-        "http://datafanthfuloss.oss-cn-shanghai.aliyuncs.com/cpsupload/pic/20190215161803733721.jpg",
-        "http://datafanthfuloss.oss-cn-shanghai.aliyuncs.com/cpsupload/pic/20190215161803766806.jpg",
-        "http://datafanthfuloss.oss-cn-shanghai.aliyuncs.com/cpsupload/pic/20190215161803764273.jpg",
-        "http://datafanthfuloss.oss-cn-shanghai.aliyuncs.com/cpsupload/pic/20190313112601325158.jpg"
-      ]
-    };
-  },
+  props:['bannerImg'],
   mounted() {
     new Swiper("#swiper4", {
       loop: true,

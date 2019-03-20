@@ -2,14 +2,14 @@
   <div class="productDetail">
     <div id="main">
       <!-- <div class="detailBanner"> -->
-      <productDetailBanner></productDetailBanner>
+      <productDetailBanner :bannerImg="goodsDetail.imgLink"></productDetailBanner>
       <!-- </div> -->
-      <productDetailMsg></productDetailMsg>
+      <productDetailMsg :bannerMsg="goodsDetail"></productDetailMsg>
     </div>
     <div id="footer">
       <productDetailFooter></productDetailFooter>
     </div>
-    <productDetailBuyMask></productDetailBuyMask>
+    <!-- <productDetailBuyMask :bannerMsg="goodsDetail"></productDetailBuyMask> -->
   </div>
 </template>
 <script>
@@ -18,11 +18,35 @@ import productDetailMsg from "../component/productDetailMsg.vue";
 import productDetailFooter from "../component/productDetailFooter";
 import productDetailBuyMask from "../component/productDetailBuyMask";
 export default {
+  data() {
+    return {
+      goodsDetail:{}
+    };
+  },
+  computed: {
+    productId() {
+      return this.$route.query.productId;
+    }
+  },
+  methods: {
+    async getGoodsDetail() {
+      let res = await this.$axios.get("http://localhost:10086/goodlist", {
+        params: {
+          productId: this.productId
+        }
+      });
+      this.goodsDetail=res.data.data[0]
+      console.log(this.goodsDetail);
+    }
+  },
   components: {
     productDetailBanner,
     productDetailMsg,
     productDetailFooter,
     productDetailBuyMask
+  },
+  created() {
+    this.getGoodsDetail();
   }
 };
 </script>
@@ -37,7 +61,7 @@ export default {
   flex: 1;
   overflow-x: hidden;
 }
-#footer{
+#footer {
   position: relative;
   z-index: 99;
 }

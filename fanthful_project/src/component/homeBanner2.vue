@@ -2,13 +2,13 @@
   <div class="banner banner2">
     <div class="swiper-container" id="swiper2">
       <div class="swiper-wrapper">
-        <div class="swiper-slide" v-for="(banner,idx) in banner2" :key="idx">
+        <div class="swiper-slide" v-for="(banner,idx) in banner2" :key="idx" @click="gotoProductDetail(banner.productId)">
           <div class="bannerImg">
-            <img :src="banner.proImgUrl" alt>
+            <img :src="banner.proImgUrl" >
           </div>
           <p class="ch">{{banner.proName}}</p>
           <p class="en">{{banner.proEnglishName}}</p>
-        </div>
+        </div> 
       </div>
       <!-- Add Pagination -->
       <div class="pages">
@@ -41,6 +41,11 @@ export default {
           }
         });
       });
+    }
+  },
+  methods: {
+    gotoProductDetail(productId) {
+      this.$router.push({path:'/productDetail',query:{productId}});
     }
   }
 };

@@ -49,7 +49,7 @@ export default {
     async getBannerMsg() {
       let res = await this.$axios.get("http://localhost:10086/banner");
       this.bannerMsg = res.data.data;
-      // console.log(res)
+      // console.log(res.data.data.banner2)
     },
     async getHotMsg() {
       let res = await this.$axios.get("http://localhost:10086/hotmsg");
