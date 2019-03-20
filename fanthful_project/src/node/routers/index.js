@@ -8,7 +8,9 @@ const hotmsgRouter = require('./hotmsg');
 
 const goodlistRouter = require('./goodlist')
 
-const asideandiconRouter = require('./asideandicon')
+const asideRouter = require('./aside')
+
+const iconRouter = require('./icon')
 
 
 //允许跨域
@@ -37,7 +39,11 @@ Router.use("/hotmsg", hotmsgRouter);
 Router.use("/goodlist", goodlistRouter);
 
 //关于首侧边栏和对应logo的路由
-Router.use("/asideandicon", asideandiconRouter);
+Router.use("/aside", asideRouter);
+
+//关于icon的路由
+Router.use("/icon", iconRouter);
+
 
 
 
