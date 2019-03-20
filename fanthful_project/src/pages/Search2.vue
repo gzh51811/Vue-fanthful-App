@@ -9,7 +9,7 @@
         </form>
         </div>
         <div class="search">
-        <i class=""  @click="search"></i>
+        <i class=""></i>
         </div>
       </div>
     
