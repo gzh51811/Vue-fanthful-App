@@ -1,12 +1,12 @@
 <template>
   <div class="nav">
-    <div class="fl nav_classify_icon">
+    <div class="fl nav_classify_icon" @click="gotoClassify()">
       <img src="../assets/home_header_nav.png">
     </div>
     <div class="logo fl">
       <img src="../assets/logo.png" alt>
     </div>
-    <div class="search fr">
+    <div class="search fr" @click="gotoSearch()">
       <img src="../assets/search.png" alt>
     </div>
     <div class="cart fr">
@@ -15,7 +15,16 @@
   </div>
 </template>
 <script>
-export default {};
+export default {
+  methods:{
+    gotoClassify(){
+      this.$router.push('/classify')
+    },
+    gotoSearch(){
+      this.$router.push('/search')
+    }
+  }
+};
 </script>
 <style scoped>
 .nav {

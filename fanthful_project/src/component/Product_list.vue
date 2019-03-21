@@ -46,7 +46,7 @@ export default {
     },
     async getGoodsList() {
       if (this.$route.query.gotoGoodslist) {
-        let res = await this.$axios.get("http://localhost:10086/goodlist");
+        let res = await this.$axios.get("/goodlist");
         this.proLists = res.data.data.slice(0, 5);
         this.$store.commit("addGoodsQty", this.proLists.length);
         

@@ -12,7 +12,7 @@ import axios from "axios";
 Vue.prototype.$axios = axios
 Vue.use(ElementUI);
 
-axios.defaults.baseURL='http://localhost:10086';
+axios.defaults.baseURL='http://zza233.top:10086';
 export default {
 };
 </script>

@@ -47,18 +47,18 @@ export default {
   },
   methods: {
     async getBannerMsg() {
-      let res = await this.$axios.get("http://localhost:10086/banner");
+      let res = await this.$axios.get("/banner");
       this.bannerMsg = res.data.data;
       // console.log(res.data.data.banner2)
     },
     async getHotMsg() {
-      let res = await this.$axios.get("http://localhost:10086/hotmsg");
+      let res = await this.$axios.get("/hotmsg");
       this.hotMsg = res.data.data;
       // console.log(res)
 
     },
      async getGoodsListMsg() {
-      let res = await this.$axios.get("http://localhost:10086/goodlist");
+      let res = await this.$axios.get("/goodlist");
       this.goodsListMsg = res.data.data;
       // console.log(res)
 
